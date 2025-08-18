@@ -1,0 +1,402 @@
+{
+  "data": [
+    {
+      "lang": "iw",
+      "id": "1953034771480686948",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 25
+      },
+      "entities": {
+        "urls": [
+          {
+            "start": 46,
+            "end": 69,
+            "url": "https://t.co/jC8achs4Hq",
+            "expanded_url": "https://twitter.com/MOSSADil/status/1953027631282065641",
+            "display_url": "x.com/MOSSADil/statu…"
+          }
+        ]
+      },
+      "conversation_id": "1953034771480686948",
+      "referenced_tweets": [
+        {
+          "type": "quoted",
+          "id": "1953027631282065641"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "תמונה נדירה של ירושלים כשבית המקדש עדיין בוער https://t.co/jC8achs4Hq",
+      "edit_history_tweet_ids": [
+        "1953034771480686948"
+      ],
+      "created_at": "2025-08-06T10:05:49.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1953034583147983209",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 3,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 0
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 3,
+            "end": 13,
+            "username": "cootallx2",
+            "id": "1732182052521332736"
+          }
+        ]
+      },
+      "conversation_id": "1953034583147983209",
+      "referenced_tweets": [
+        {
+          "type": "retweeted",
+          "id": "1952973099303108910"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "RT @cootallx2: ברק רביד כשחמאס מפרסם תעמולה שקרית על רעב בעזה: משתף את התעמולה דרך פרסומים של עיתון הארץ.\n\nברק רביד כשמוכיחים שהתעמולה של ח…",
+      "edit_history_tweet_ids": [
+        "1953034583147983209"
+      ],
+      "created_at": "2025-08-06T10:05:04.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952835790964482086",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 14
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 12,
+            "username": "shani101792",
+            "id": "1537546043461619716"
+          }
+        ]
+      },
+      "conversation_id": "1952833430795718854",
+      "in_reply_to_user_id": "1537546043461619716",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952833430795718854"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@shani101792 איפה המים הזה של סיינפלד על השרימפס בחינם?",
+      "edit_history_tweet_ids": [
+        "1952835790964482086"
+      ],
+      "created_at": "2025-08-05T20:55:09.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952831867574468953",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 4,
+        "like_count": 5,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 555
+      },
+      "conversation_id": "1952831867574468953",
+      "author_id": "1786136347163443200",
+      "text": "הייתי היום בשיעור והרב התדיין האם טומאת ארץ העמים נוהג גם מחוץ לארץ ישראל",
+      "edit_history_tweet_ids": [
+        "1952831867574468953"
+      ],
+      "created_at": "2025-08-05T20:39:33.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952803889377366269",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 0,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 61
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 12,
+            "username": "OriyaShilat",
+            "id": "1684311936580591616"
+          },
+          {
+            "start": 13,
+            "end": 27,
+            "username": "historyinpic9",
+            "id": "1725128035937013760"
+          },
+          {
+            "start": 28,
+            "end": 40,
+            "username": "akivanovick",
+            "id": "2426169308"
+          }
+        ]
+      },
+      "conversation_id": "1952797567265165745",
+      "in_reply_to_user_id": "1684311936580591616",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952800164806013338"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@OriyaShilat @historyinpic9 @akivanovick לא נראה לי",
+      "edit_history_tweet_ids": [
+        "1952803889377366269"
+      ],
+      "created_at": "2025-08-05T18:48:23.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952794826535256473",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 4,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 338
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 10,
+            "username": "Idaneretz",
+            "id": "840229633832472581"
+          }
+        ]
+      },
+      "conversation_id": "1952791802139865252",
+      "in_reply_to_user_id": "840229633832472581",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952791802139865252"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@Idaneretz ישראל החליטה לא להוציא עונה שלישית של סרטי טבע של חיות טורפות",
+      "edit_history_tweet_ids": [
+        "1952794826535256473"
+      ],
+      "created_at": "2025-08-05T18:12:22.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952783280131997885",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 8
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 9,
+            "username": "yairnaki",
+            "id": "1922301926500171776"
+          },
+          {
+            "start": 10,
+            "end": 20,
+            "username": "hamalkaiv",
+            "id": "1932417219142541312"
+          }
+        ]
+      },
+      "conversation_id": "1952415038456938500",
+      "in_reply_to_user_id": "1922301926500171776",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952781017644720136"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@yairnaki @hamalkaiv מ.ש.ל",
+      "edit_history_tweet_ids": [
+        "1952783280131997885"
+      ],
+      "created_at": "2025-08-05T17:26:29.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952779530894004394",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 1,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 10
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 9,
+            "username": "yairnaki",
+            "id": "1922301926500171776"
+          },
+          {
+            "start": 10,
+            "end": 20,
+            "username": "hamalkaiv",
+            "id": "1932417219142541312"
+          }
+        ]
+      },
+      "conversation_id": "1952415038456938500",
+      "in_reply_to_user_id": "1922301926500171776",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952435556593422430"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@yairnaki @hamalkaiv בגלל זה זה שגוי?",
+      "edit_history_tweet_ids": [
+        "1952779530894004394"
+      ],
+      "created_at": "2025-08-05T17:11:35.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952755508646912244",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 0,
+        "like_count": 1,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 17
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 16,
+            "username": "sawdustcrackers",
+            "id": "1670421707813789696"
+          }
+        ]
+      },
+      "conversation_id": "1952741022892425498",
+      "in_reply_to_user_id": "1670421707813789696",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952741022892425498"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@sawdustcrackers איזה כיף זה שמותר לשמוע עכשיו מוזיקה",
+      "edit_history_tweet_ids": [
+        "1952755508646912244"
+      ],
+      "created_at": "2025-08-05T15:36:08.000Z",
+      "possibly_sensitive": false
+    },
+    {
+      "lang": "iw",
+      "id": "1952739962597642270",
+      "reply_settings": "everyone",
+      "public_metrics": {
+        "retweet_count": 0,
+        "reply_count": 2,
+        "like_count": 2,
+        "quote_count": 0,
+        "bookmark_count": 0,
+        "impression_count": 20
+      },
+      "entities": {
+        "mentions": [
+          {
+            "start": 0,
+            "end": 11,
+            "username": "lafai74404",
+            "id": "1848016686479228929"
+          },
+          {
+            "start": 12,
+            "end": 22,
+            "username": "hamalkaiv",
+            "id": "1932417219142541312"
+          }
+        ]
+      },
+      "conversation_id": "1952720118330327390",
+      "in_reply_to_user_id": "1848016686479228929",
+      "referenced_tweets": [
+        {
+          "type": "replied_to",
+          "id": "1952739686549455353"
+        }
+      ],
+      "author_id": "1786136347163443200",
+      "text": "@lafai74404 @hamalkaiv זה ההמצאה הכי שימושית, אתה יודע שבמקור זה בכלל נועד שישבו על זה?",
+      "edit_history_tweet_ids": [
+        "1952739962597642270"
+      ],
+      "created_at": "2025-08-05T14:34:21.000Z",
+      "possibly_sensitive": false
+    }
+  ],
+  "meta": {
+    "next_token": "7140dibdnow9c7btw4e1qzy3aidnbln7njb86tnt2httc",
+    "result_count": 10,
+    "newest_id": "1953034771480686948",
+    "oldest_id": "1952739962597642270"
+  }
+}

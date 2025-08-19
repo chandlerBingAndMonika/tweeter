@@ -4,7 +4,7 @@ from sqlalchemy import (
 from sqlalchemy.dialects.postgresql import JSONB
 from sqlalchemy.orm import declarative_base
 from datetime import datetime, timezone
-from base import Base
+from careDataBase.session import Base, engine
 
 class ApiCall(Base):
     __tablename__ = "api_calls"
@@ -16,21 +16,17 @@ class ApiCall(Base):
     token_name = Column(String, nullable=False)            # מפנה לטבלת tokens.token_name
     status_code = Column(Integer, nullable=False)
     is_success = Column(Boolean, nullable=False)
-
-    duration_ms = Column(Integer)
-    user_queried = Column(String)                          # optional: user_id/username
-    device_used = Column(String)
-    description = Column(Text)
+    error_message = Column(Text, nullable=True)            # הודעת שגיאה אם יש
 
     # מומלץ להוסיף לפרויקט:
     endpoint = Column(String, nullable=False)              # e.g. "/2/users/:id/tweets"
     url = Column(Text, nullable=False)                     # ה-URL שנקרא בפועל
     query_params = Column(JSONB)                           # פרמטרי השאילתה שנשלחו
-    response_size_bytes = Column(Integer)
 
-    # רייט-לימיט (מהכותרות)
-    rl_limit = Column(Integer)
-    rl_remaining = Column(Integer)
-    rl_reset_at = Column(DateTime(timezone=True))          # epoch->timestamp
+    time_cared = Column(Integer(timezone=True), nullable=True)  # זמן הטיפול בפועל של הבקשה
 
-    data_downloaded_at = Column(DateTime(timezone=True))
+# יצירת הטבלה
+if __name__ == "__main__":
+    print(Base.metadata.tables)
+    Base.metadata.create_all(bind=engine)
+    print("✅ api_calls table ready")

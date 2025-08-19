@@ -1,22 +1,23 @@
-import os
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
-load_dotenv()
-engine = create_engine(os.environ["DATABASE_URL"], echo=True)
+from sqlalchemy import Column, String, Integer, Boolean, TIMESTAMP, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.dialects.postgresql import TEXT
+from careDataBase.session import Base, engine
+from careDataBase.models.users import User
 
-SQL = """
-CREATE TABLE IF NOT EXISTS user_state (
-  user_id                        TEXT PRIMARY KEY REFERENCES users(user_id) ON UPDATE CASCADE ON DELETE CASCADE,
-  last_seen_id                   TEXT,
-  oldest_downloaded_tweet_id     TEXT,
-  downloaded_tweets_count        INTEGER NOT NULL DEFAULT 0,
-  total_tweets_count             INTEGER NOT NULL DEFAULT 0,
-  is_limited_access              BOOLEAN NOT NULL DEFAULT FALSE,
-  is_tracked                     BOOLEAN NOT NULL DEFAULT TRUE,
-  updated_at                     TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-"""
+class UserState(Base):
+    __tablename__ = "user_state"
 
-with engine.begin() as conn:
-    conn.exec_driver_sql(SQL)
-print("✅ user_state table ready")
+    user_id = Column(String, ForeignKey("users.user_id", onupdate="CASCADE", ondelete="CASCADE"), primary_key=True)
+    last_seen_id = Column(TEXT, nullable=True)
+    oldest_downloaded_tweet_id = Column(TEXT, nullable=True)
+    downloaded_tweets_count = Column(Integer, nullable=False, default=0)
+    total_tweets_count = Column(Integer, nullable=False, default=0)
+    is_limited_access = Column(Boolean, nullable=False, default=False)
+    is_tracked = Column(Boolean, nullable=False, default=True)
+    updated_at = Column(TIMESTAMP, nullable=False)
+
+
+if __name__ == "__main__":
+    print(Base.metadata.tables.keys())
+    Base.metadata.create_all(bind=engine)
+    print("✅ usersState table ready")

@@ -1,21 +1,20 @@
-import os
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
-load_dotenv()
-engine = create_engine(os.environ["DATABASE_URL"], echo=True)
+from sqlalchemy import Column, String, Integer, TIMESTAMP, ForeignKey
+from sqlalchemy.ext.declarative import declarative_base
 
-SQL = """
-CREATE TABLE IF NOT EXISTS tokens_endpoint_rl (
-  token_name      TEXT NOT NULL REFERENCES tokens(token_name) ON UPDATE CASCADE ON DELETE CASCADE,
-  endpoint_bucket TEXT NOT NULL,
-  rl_limit        INTEGER,
-  rl_remaining    INTEGER,
-  rl_reset_at     TIMESTAMPTZ,
-  updated_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
-  PRIMARY KEY (token_name, endpoint_bucket)
-);
-"""
+from careDataBase.session import Base, engine
 
-with engine.begin() as conn:
-    conn.exec_driver_sql(SQL)
-print("✅ tokens_endpoint_rl table ready")
+class TokensEndpointRL(Base):
+    __tablename__ = "tokens_endpoint_rl"
+
+    token_name = Column(String, ForeignKey("tokens.token_name", onupdate="CASCADE", ondelete="CASCADE"), primary_key=True)
+    endpoint_bucket = Column(String, primary_key=True)
+    rl_limit = Column(Integer, nullable=True)
+    rl_remaining = Column(Integer, nullable=True)
+    rl_reset_at = Column(TIMESTAMP, nullable=True)
+    updated_at = Column(TIMESTAMP, nullable=False, server_default="now()")
+
+# יצירת הטבלה
+if __name__ == "__main__":
+    print(Base.metadata.tables)
+    Base.metadata.create_all(bind=engine)
+    print("✅ tokens_endpoint_rl table ready")

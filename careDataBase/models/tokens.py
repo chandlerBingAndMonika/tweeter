@@ -1,25 +1,37 @@
-import os
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
-load_dotenv()
-engine = create_engine(os.environ["DATABASE_URL"], echo=True)
+from sqlalchemy import Column, String, Integer, Boolean, TIMESTAMP, Enum
+from sqlalchemy.ext.declarative import declarative_base
+import enum
+from careDataBase.session import Base, engine
+# נניח שיש לך Enum בשם twitter_token_type
+class TwitterTokenTypeEnum(enum.Enum):
+    APP = "app"
+    USER = "user"
+    # הוסף ערכים נוספים לפי הצורך
 
-SQL = """
-CREATE TABLE IF NOT EXISTS tokens (
-  token_name              TEXT PRIMARY KEY,
-  token_type              twitter_token_type NOT NULL,
-  token_status            twitter_token_status NOT NULL DEFAULT 'active',
-  is_active               BOOLEAN NOT NULL DEFAULT TRUE,
-  owner_label             TEXT,
-  notes                   TEXT,
-  monthly_read_limit      INTEGER,
-  monthly_read_used       INTEGER NOT NULL DEFAULT 0,
-  monthly_reset_at        TIMESTAMPTZ,
-  created_at              TIMESTAMPTZ NOT NULL DEFAULT now(),
-  updated_at              TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-"""
+# נניח שיש לך Enum בשם twitter_token_status
+class TwitterTokenStatusEnum(enum.Enum):
+    ACTIVE = "active"
+    INACTIVE = "inactive"
+    SUSPENDED = "suspended"
+    # הוסף ערכים נוספים לפי הצורך
 
-with engine.begin() as conn:
-    conn.exec_driver_sql(SQL)
-print("✅ tokens table ready")
+class Token(Base):
+    __tablename__ = "tokens"
+
+    token_name = Column(String, primary_key=True)
+    token_type = Column(Enum(TwitterTokenTypeEnum, name="twitter_token_type"), nullable=False)
+    token_status = Column(Enum(TwitterTokenStatusEnum, name="twitter_token_status"), nullable=False, server_default="ACTIVE")
+    is_active = Column(Boolean, nullable=False, default=True)
+    owner_label = Column(String, nullable=True)
+    notes = Column(String, nullable=True)
+    monthly_read_limit = Column(Integer, nullable=True)
+    monthly_read_used = Column(Integer, nullable=False, default=0)
+    monthly_reset_at = Column(TIMESTAMP, nullable=True)
+    created_at = Column(TIMESTAMP, nullable=False, server_default="now()")
+    updated_at = Column(TIMESTAMP, nullable=False, server_default="now()")
+
+# יצירת הטבלה
+if __name__ == "__main__":
+    print(Base.metadata.tables)
+    Base.metadata.create_all(bind=engine)
+    print("✅ tokens table ready")

@@ -1,24 +1,22 @@
-import os
-from sqlalchemy import create_engine
-from dotenv import load_dotenv
-load_dotenv()
-engine = create_engine(os.environ["DATABASE_URL"], echo=True)
+from careDataBase.session import Base, engine
+from sqlalchemy import Column, Integer, String, TIMESTAMP, JSON
 
-SQL = """
-CREATE TABLE IF NOT EXISTS users (
-  user_id                TEXT PRIMARY KEY,
-  username               TEXT UNIQUE,
-  name                   TEXT,
-  created_at_platform    TIMESTAMPTZ,
-  followers_count        INTEGER,
-  following_count        INTEGER,
-  tweet_count            INTEGER,
-  listed_count           INTEGER,
-  raw_json               JSONB NOT NULL,
-  updated_at             TIMESTAMPTZ NOT NULL DEFAULT now()
-);
-"""
+class User(Base):
+    __tablename__ = "users"
 
-with engine.begin() as conn:
-    conn.exec_driver_sql(SQL)
-print("✅ users table ready")
+    user_id = Column(String, primary_key=True, index=True)
+    username = Column(String, unique=True, index=True)
+    name = Column(String)
+    created_at_platform = Column(TIMESTAMP)
+    followers_count = Column(Integer)
+    following_count = Column(Integer)
+    tweet_count = Column(Integer)
+    listed_count = Column(Integer)
+    raw_json = Column(JSON, nullable=False)
+    updated_at = Column(TIMESTAMP)
+
+# יצירת הטבלאות
+if __name__ == "__main__":
+    print(Base.metadata.tables)
+    Base.metadata.create_all(bind=engine)
+    print("✅ users table ready")

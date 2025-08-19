@@ -1,41 +1,28 @@
 # careDataBase/session.py
-from dotenv import load_dotenv
+
 import os
 from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
+from dotenv import load_dotenv
 
 # טוען משתני סביבה
 load_dotenv()
 
-# טוען את ה־DB URI מה־.env
-DATABASE_URL = os.getenv("DB_URI")
-if not DATABASE_URL:
-    raise ValueError("❌ DB_URI not found in environment variables (.env file)")
+# לוקח את ה-URL מתוך ה-env
+raw_url = os.environ.get("DATABASE_URL")
+if not raw_url:
+    raise ValueError("❌ DATABASE_URL is not set in environment variables")
 
-print(f"Connecting with: {DATABASE_URL}")
+# מתקן את הבעיה של postgres://
+db_url = raw_url.replace("postgres://", "postgresql+psycopg2://")
 
-# יוצר engine ל-SQLAlchemy
-engine = create_engine(
-    DATABASE_URL,
-    pool_pre_ping=True,   # בודק שהחיבור חי לפני שימוש
-    pool_size=5,          # גודל הבריכה
-    max_overflow=10,      # כמה חיבורים מעבר לבריכה בעת עומס
-    pool_recycle=1800,    # מחזור חיבורים
-    future=True,
-)
+print(f"Connecting with: {db_url}")
 
-# Session מקומי
-SessionLocal = sessionmaker(
-    bind=engine,
-    autoflush=False,
-    autocommit=False,
-    future=True
-)
+# יוצר engine
+engine = create_engine(db_url, echo=True)
 
-# פונקציה לקבלת חיבור
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
+# יוצר Session מקומי
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
+# בסיס לכל המודלים
+Base = declarative_base()

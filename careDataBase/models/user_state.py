@@ -17,7 +17,3 @@ class UserState(Base):
     updated_at = Column(TIMESTAMP, nullable=False)
 
 
-if __name__ == "__main__":
-    print(Base.metadata.tables.keys())
-    Base.metadata.create_all(bind=engine)
-    print("✅ usersState table ready")

@@ -30,8 +30,3 @@ class Tweet(Base):
     raw_json = Column(JSONB, nullable=False)
     ingested_at = Column(TIMESTAMP, nullable=False, server_default="now()")
 
-# יצירת הטבלאות
-if __name__ == "__main__":
-    print(Base.metadata.tables)
-    Base.metadata.create_all(bind=engine)
-    print("✅ tweets table ready")

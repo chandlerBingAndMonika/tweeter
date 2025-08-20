@@ -18,15 +18,9 @@ class ApiCall(Base):
     is_success = Column(Boolean, nullable=False)
     error_message = Column(Text, nullable=True)            # הודעת שגיאה אם יש
 
-    # מומלץ להוסיף לפרויקט:
     endpoint = Column(String, nullable=False)              # e.g. "/2/users/:id/tweets"
-    url = Column(Text, nullable=False)                     # ה-URL שנקרא בפועל
+    url_of_twitter = Column(Text, nullable=False)                     # ה-URL שנקרא בפועל
     query_params = Column(JSONB)                           # פרמטרי השאילתה שנשלחו
 
-    time_cared = Column(Integer(timezone=True), nullable=True)  # זמן הטיפול בפועל של הבקשה
+    time_cared = Column(Integer, nullable=True)  # זמן הטיפול בפועל של הבקשה
 
-# יצירת הטבלה
-if __name__ == "__main__":
-    print(Base.metadata.tables)
-    Base.metadata.create_all(bind=engine)
-    print("✅ api_calls table ready")

@@ -1,0 +1,41 @@
+{
+  "tiers": {
+    "free": {
+      "monthly": {
+        "reads": 100,
+        "writes": 500
+      },
+      "endpoints": {
+        "GET /2/tweets": { "per_user": null, "per_app": null },
+        "GET /2/tweets/:id": { "per_user": null, "per_app": null },
+        "GET /2/tweets/search/recent": { "per_user": null, "per_app": null }
+      }
+    },
+    "basic": {
+      "monthly": {
+        "reads": 15000,
+        "writes": 50000
+      },
+      "daily_writes": {
+        "per_user": 100,
+        "per_app": 1667
+      },
+      "endpoints": {
+        "GET /2/tweets": { "per_user": 15, "per_app": 1 },
+        "GET /2/tweets/:id": { "per_user": 15, "per_app": 1 },
+        "GET /2/tweets/search/recent": { "per_user": 15, "per_app": 1 }
+      }
+    },
+    "pro": {
+      "monthly": {
+        "reads": 1000000,
+        "writes": null
+      },
+      "endpoints": {
+        "GET /2/tweets": { "per_user": 900, "per_app": 450 },
+        "GET /2/tweets/:id": { "per_user": 900, "per_app": 450 },
+        "GET /2/tweets/search/recent": { "per_user": 450, "per_app": 300 }
+      }
+    }
+  }
+}

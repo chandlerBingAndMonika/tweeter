@@ -11,12 +11,6 @@ class User(Base):
     followers_count = Column(Integer)
     following_count = Column(Integer)
     tweet_count = Column(Integer)
-    listed_count = Column(Integer)
-    raw_json = Column(JSON, nullable=False)
     updated_at = Column(TIMESTAMP)
 
-# יצירת הטבלאות
-if __name__ == "__main__":
-    print(Base.metadata.tables)
-    Base.metadata.create_all(bind=engine)
-    print("✅ users table ready")
+
